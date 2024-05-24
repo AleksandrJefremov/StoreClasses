@@ -20,7 +20,7 @@ namespace StoreClasses
 
         private void btnCreateItem1_Click(object sender, EventArgs e)
         {
-            Item item = new Item("12345", "Laptop", 999.99);
+            Item item = new Item("12345", "Laptop", 9990.99);
 
             txtItemId.Text = item.GetItemId();
             txtName.Text = item.GetName();
@@ -92,6 +92,16 @@ namespace StoreClasses
                     {
                         PerishableItem perishableItem = (PerishableItem)selectedItem;
                         perishableItem.SetPerish(perished);
+                        // and fresh produce
+                        if (selectedItem is FreshProduce freshProduce)
+                        {
+                            freshProduce.SetFarm(txtFreshProduce.Text);
+                        }
+                        else
+                        {
+                            // clear
+                            txtFreshProduce.Clear();
+                        }
                     }
 
                     else
@@ -156,7 +166,7 @@ namespace StoreClasses
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PerishableItem perishableItem = new PerishableItem("54321", "Milk", 2.99, false);
+            PerishableItem perishableItem = new PerishableItem("54321", "Milk", 29.99, false);
             items.Add(perishableItem);
             UpdateListBox();
         }
@@ -165,33 +175,63 @@ namespace StoreClasses
         {
             if (listBox.SelectedIndex != -1)
             {
-                // Get the selected item
+                // get selected item
                 Item selectedItem = (Item)listBox.SelectedItem;
 
-                // Update the textboxes with the details of the selected item
+                // update textboxes
                 txtItemId.Text = selectedItem.GetItemId();
                 txtName.Text = selectedItem.GetName();
                 txtPrice.Text = selectedItem.GetPrice().ToString("C");
 
-                // Check if the selected item is a perishable item
+                // if perishable item
                 if (selectedItem is PerishableItem perishableItem)
                 {
                     txtBoxPerished.Text = perishableItem.GetPerished().ToString();
+                    // and fresh produce
+                    if (selectedItem is FreshProduce freshProduce)
+                    {
+                        txtFreshProduce.Text = freshProduce.GetFarm();
+                    }
+                    else
+                    {
+                        // clear
+                        txtFreshProduce.Clear();
+                    }
                 }
                 else
                 {
-                    // Clear the perished textbox if the selected item is not perishable
+
                     txtBoxPerished.Clear();
                 }
             }
             else
             {
-                // Clear all textboxes if no item is selected
+                // if no item selected
                 txtItemId.Clear();
                 txtName.Clear();
                 txtPrice.Clear();
                 txtBoxPerished.Clear();
+                txtFreshProduce.Clear();
             }
+        }
+
+        private void btnCreateFresh_Click(object sender, EventArgs e)
+        {
+
+            // Create a new fresh produce item
+            FreshProduce freshProduceItem = new FreshProduce("67890", "Apple", 1.99, false, "Farmor Agnetas");
+            items.Add(freshProduceItem);
+            UpdateListBox();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
