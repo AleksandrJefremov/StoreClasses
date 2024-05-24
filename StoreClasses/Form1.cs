@@ -17,7 +17,7 @@ namespace StoreClasses
         }
 
 
-
+// create demo item
         private void btnCreateItem1_Click(object sender, EventArgs e)
         {
             Item item = new Item("12345", "Laptop", 9990.99);
@@ -30,6 +30,7 @@ namespace StoreClasses
             UpdateListBox();
         }
 
+        //update listbox (self explanatory imo?!)
         private void UpdateListBox()
         {
             // clear
@@ -42,24 +43,8 @@ namespace StoreClasses
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // check if item selected
-            if (listBox.SelectedIndex != -1)
-            {
-                // get selected item
-                Item selectedItem = (Item)listBox.SelectedItem;
 
-                // display details in txt boxes
-                txtItemId.Text = selectedItem.GetItemId();
-                txtName.Text = selectedItem.GetName();
-                txtPrice.Text = selectedItem.GetPrice().ToString("C");
-            }
-        }
-
-
-
-
+        //update update selected item
         private void btnUpdateItem_Click_1(object sender, EventArgs e)
         {
             // Check if an item is selected
@@ -121,6 +106,8 @@ namespace StoreClasses
             UpdateListBox();
         }
 
+
+        //delete selected item
         private void btnDelete_Click(object sender, EventArgs e)
         {
             // if item selected
@@ -139,6 +126,8 @@ namespace StoreClasses
             UpdateListBox();
         }
 
+
+        //make perishable items/fresh produce perish = loose value
         private void btnperish_Click(object sender, EventArgs e)
         {
             if (listBox.SelectedIndex != -1)
@@ -164,12 +153,16 @@ namespace StoreClasses
             }
         }
 
+        // create demo perishable item
         private void button1_Click(object sender, EventArgs e)
         {
             PerishableItem perishableItem = new PerishableItem("54321", "Milk", 29.99, false);
             items.Add(perishableItem);
             UpdateListBox();
         }
+
+
+        //if listbox selected item changes
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -215,6 +208,8 @@ namespace StoreClasses
             }
         }
 
+
+        // create farm produce
         private void btnCreateFresh_Click(object sender, EventArgs e)
         {
 
@@ -224,11 +219,15 @@ namespace StoreClasses
             UpdateListBox();
         }
 
+
+        //if i delete this i get error
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
+
+        //if i delete this i get error
         private void label3_Click(object sender, EventArgs e)
         {
 

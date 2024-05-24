@@ -41,6 +41,7 @@ namespace StoreClasses
             System.Diagnostics.Debug.WriteLine($"Price: {price:C}");
         }
 
+        // så det finns namn och itemid i listbox
         public override string ToString()
         {
             return $"{name} ({itemId}) - {price:C}";
