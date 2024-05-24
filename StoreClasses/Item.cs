@@ -23,40 +23,16 @@ namespace StoreClasses
             price = Price;
         }
 
-        public string GetItemId()
-        {
-            return itemId;
-        }
+        // get set
+        public string GetItemId() => itemId;
+        public void SetItemId(string value) => itemId = value;
+        public string GetName() => name;
+        public void SetName(string value) => name = value;
 
-        public void SetItemId(string value)
-        {
-            itemId = value;
-        }
+        public double GetPrice() => price;
+        public void SetPrice(double value) => price = value;
 
-        // Getter and setter methods for Name
-        public string GetName()
-        {
-            return name;
-        }
-
-        public void SetName(string value)
-        {
-            name = value;
-        }
-
-        // Getter and setter methods for Price
-        public double GetPrice()
-        {
-            return price;
-        }
-
-        public void SetPrice(double value)
-        {
-            price = value;
-        }
-
-
-        // Method to display item details
+        // debug
         public void DisplayInfo()
         {
             System.Diagnostics.Debug.WriteLine($"Item ID: {itemId}");
@@ -67,6 +43,30 @@ namespace StoreClasses
         public override string ToString()
         {
             return $"{name} ({itemId}) - {price:C}";
+        }
+    }
+
+    internal class PerishableItem : Item
+    {
+        // properties
+        public bool perished; 
+
+        // constructor
+        public PerishableItem(string itemId, string name, double price, bool perished)
+            : base(itemId, name, price)
+        {
+            perished = perished;
+        }
+
+        public bool GetPerished() => perished;
+        public void SetPerish(bool bad)
+        {
+            perished = bad;
+
+            if (perished)
+            {
+                SetPrice(0);
+            }
         }
     }
 }

@@ -34,15 +34,19 @@
             txtPrice = new TextBox();
             listBox = new ListBox();
             btnUpdateItem = new Button();
+            btnDelete = new Button();
+            txtBoxPerished = new TextBox();
+            btnperish = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // btnCreateItem1
             // 
-            btnCreateItem1.Location = new Point(639, 12);
+            btnCreateItem1.Location = new Point(601, 12);
             btnCreateItem1.Name = "btnCreateItem1";
-            btnCreateItem1.Size = new Size(147, 23);
+            btnCreateItem1.Size = new Size(185, 23);
             btnCreateItem1.TabIndex = 0;
-            btnCreateItem1.Text = "Create Random Item";
+            btnCreateItem1.Text = "Create Demo Item";
             btnCreateItem1.UseVisualStyleBackColor = true;
             btnCreateItem1.Click += btnCreateItem1_Click;
             // 
@@ -75,22 +79,64 @@
             listBox.Name = "listBox";
             listBox.Size = new Size(344, 94);
             listBox.TabIndex = 4;
+            listBox.SelectedIndexChanged += listBox_SelectedIndexChanged;
             // 
             // btnUpdateItem
             // 
-            btnUpdateItem.Location = new Point(639, 41);
+            btnUpdateItem.Location = new Point(601, 386);
             btnUpdateItem.Name = "btnUpdateItem";
-            btnUpdateItem.Size = new Size(147, 23);
+            btnUpdateItem.Size = new Size(185, 23);
             btnUpdateItem.TabIndex = 6;
             btnUpdateItem.Text = "Update item";
             btnUpdateItem.UseVisualStyleBackColor = true;
             btnUpdateItem.Click += btnUpdateItem_Click_1;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(601, 415);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(185, 23);
+            btnDelete.TabIndex = 7;
+            btnDelete.Text = "Delete Item";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // txtBoxPerished
+            // 
+            txtBoxPerished.Location = new Point(59, 125);
+            txtBoxPerished.Name = "txtBoxPerished";
+            txtBoxPerished.Size = new Size(100, 23);
+            txtBoxPerished.TabIndex = 8;
+            // 
+            // btnperish
+            // 
+            btnperish.Location = new Point(601, 152);
+            btnperish.Name = "btnperish";
+            btnperish.Size = new Size(185, 23);
+            btnperish.TabIndex = 9;
+            btnperish.Text = "Perish";
+            btnperish.UseVisualStyleBackColor = true;
+            btnperish.Click += btnperish_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(601, 123);
+            button1.Name = "button1";
+            button1.Size = new Size(185, 23);
+            button1.TabIndex = 10;
+            button1.Text = "Create Demo Perishable item";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(798, 450);
+            Controls.Add(button1);
+            Controls.Add(btnperish);
+            Controls.Add(txtBoxPerished);
+            Controls.Add(btnDelete);
             Controls.Add(btnUpdateItem);
             Controls.Add(listBox);
             Controls.Add(txtPrice);
@@ -113,5 +159,9 @@
         private TextBox txtPrice;
         private ListBox listBox;
         private Button btnUpdateItem;
+        private Button btnDelete;
+        private TextBox txtBoxPerished;
+        private Button btnperish;
+        private Button button1;
     }
 }
