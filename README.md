@@ -5,3 +5,6 @@ https://imgur.com/a/k4JVrm6
 
 proof att det är runnable:
 https://imgur.com/a/LRraIzu
+
+klasser här:
+https://github.com/AleksandrJefremov/StoreClasses/blob/master/StoreClasses/Item.cs
