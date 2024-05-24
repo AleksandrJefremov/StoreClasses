@@ -28,7 +28,7 @@ namespace StoreClasses
             return itemId;
         }
 
-        private void SetItemId(string value)
+        public void SetItemId(string value)
         {
             itemId = value;
         }
@@ -39,7 +39,7 @@ namespace StoreClasses
             return name;
         }
 
-        private void SetName(string value)
+        public void SetName(string value)
         {
             name = value;
         }
@@ -50,7 +50,7 @@ namespace StoreClasses
             return price;
         }
 
-        private void SetPrice(double value)
+        public void SetPrice(double value)
         {
             price = value;
         }

@@ -33,11 +33,12 @@
             txtName = new TextBox();
             txtPrice = new TextBox();
             listBox = new ListBox();
+            btnUpdateItem = new Button();
             SuspendLayout();
             // 
             // btnCreateItem1
             // 
-            btnCreateItem1.Location = new Point(629, 23);
+            btnCreateItem1.Location = new Point(639, 12);
             btnCreateItem1.Name = "btnCreateItem1";
             btnCreateItem1.Size = new Size(147, 23);
             btnCreateItem1.TabIndex = 0;
@@ -70,16 +71,27 @@
             // 
             listBox.FormattingEnabled = true;
             listBox.ItemHeight = 15;
-            listBox.Location = new Point(59, 175);
+            listBox.Location = new Point(59, 260);
             listBox.Name = "listBox";
             listBox.Size = new Size(344, 94);
             listBox.TabIndex = 4;
+            // 
+            // btnUpdateItem
+            // 
+            btnUpdateItem.Location = new Point(639, 41);
+            btnUpdateItem.Name = "btnUpdateItem";
+            btnUpdateItem.Size = new Size(147, 23);
+            btnUpdateItem.TabIndex = 6;
+            btnUpdateItem.Text = "Update item";
+            btnUpdateItem.UseVisualStyleBackColor = true;
+            btnUpdateItem.Click += btnUpdateItem_Click_1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(798, 450);
+            Controls.Add(btnUpdateItem);
             Controls.Add(listBox);
             Controls.Add(txtPrice);
             Controls.Add(txtName);
@@ -100,5 +112,6 @@
         private TextBox txtName;
         private TextBox txtPrice;
         private ListBox listBox;
+        private Button btnUpdateItem;
     }
 }
